@@ -1,0 +1,173 @@
+<!-- Сохраните как index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GTA 5 RP</title>
+  <style>
+    :root{
+      --bg: #f3f7fb;
+      --card: #ffffff;
+      --accent: linear-gradient(135deg,#0ea5e9,#6366f1);
+      --text:#0f172a;
+      --muted:#64748b;
+      --radius:14px;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{
+      max-width:1000px;
+      margin:28px auto;
+      padding:20px;
+    }
+  body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+    /* шапка */
+    .hero{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 12px 30px rgba(2,6,23,0.08);
+      display:flex;
+      gap:18px;
+      align-items:center;
+      overflow:hidden;
+    }
+    .logo {
+      width:96px;height:96px;border-radius:12px;
+      background:var(--accent);
+      display:flex;align-items:center;justify-content:center;color:white;
+      font-weight:700;font-size:32px;flex:0 0 96px;
+      box-shadow:0 8px 18px rgba(99,102,241,0.18);
+    }
+    .hero .info{flex:1}
+    .title{margin:0;font-size:20px}
+    .subtitle{margin:6px 0 0 0;color:var(--muted)}
+    /* навигация ссылок (3 ссылки) */
+    .links{
+      display:flex;
+      gap:12px;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .links a{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(15,23,42,0.04), rgba(15,23,42,0.02));
+      color:var(--text);
+      font-weight:600;
+      transition:transform .14s ease, box-shadow .14s ease;
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .links a:hover{ transform:translateY(-4px); box-shadow:0 10px 24px rgba(2,6,23,0.08) }
+    .primary{
+      background:var(--accent);
+      color:white;
+      border:0;
+      box-shadow:0 8px 22px rgba(14,165,233,0.18);
+    }
+
+    /* основной контент */
+    .content{display:grid;grid-template-columns:1fr 340px;gap:18px;margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+    .specs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.spec{background:#f8fbff;padding:8px 10px;border-radius:8px;color:var(--muted);font-weight:700}
+
+    .right img{width:100%;height:auto;border-radius:8px;display:block}
+
+    /* футер */
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* адаптив */
+    @media (max-width:900px){
+      .content{grid-template-columns:1fr}
+      .hero{flex-direction:row}
+    }
+    @media (max-width:560px){
+      .hero{flex-direction:column;align-items:flex-start}
+      .logo{width:78px;height:78px;font-size:28px}
+    }
+
+    /* плавный скролл */
+    html{scroll-behavior:smooth}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero" aria-label="Заголовок">
+      
+      <div class="info">
+        <h1 class="title">GTA 5	</h1>
+        <p class="subtitle">Мир тулеров и угара.</p>
+
+        <div class="links" role="navigation" aria-label="Ссылки">
+          <!-- 1) внешняя ссылка (открывается в новой вкладке) -->
+          <a href="Карта.html" title="Открыть внешнюю страницу">
+           Карта
+          </a>
+
+          <!-- 2) якорная ссылка на раздел на той же странице -->
+          <a href="ГОС.html" title="Открыть внешнюю страницу">
+          Государственные организации
+          </a>
+
+
+          <!-- 3) почтовая ссылка -->
+          <a href="Бандитские группировки.html" title="Открыть внешнюю страницу">
+            Бандитские группировки
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="content" style="margin-top:18px">
+      <main class="card"> 
+        <h3 style="margin-top:12px">Описание</h3>
+        <p style="color:var(--muted)">Grand Theft Auto V (GTA 5) — экшен-адвенчура от Rockstar North, выпущенная в 2013 году. Действие происходит в вымышленном штате Сан-Андреас, где игроки управляют тремя персонажами: Майклом, Франклином и Тревором. Игра предлагает открытый мир, множество миссий и активностей, а также онлайн-режим для взаимодействия с другими игроками. GTA 5 получила высокие оценки и стала одной из самых продаваемых игр в истории.</p>
+      </main>
+
+      <aside class="right">
+        <div class="card" style="padding:0;overflow:hidden">
+          <img src="IMG_1212.png" alt="Это я" />
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <strong>Контакты</strong>
+          <p style="color:var(--muted);margin:8px 0 0 0">Тел: +375 (29) 386-39-05<br> </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      </footer>
+  </div>
+</body>
+</html>

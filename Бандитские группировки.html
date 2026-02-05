@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея с переливающимся фоном</title>
+    <style>
+        /* Анимированный градиентный фон */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Контейнер для карточек */
+        .container {
+            max-width: 1200px;
+            display: grid;
+            /* Сетка: карточки будут подстраиваться под размер экрана */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        /* Стиль карточки */
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px); /* Эффект размытия */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Изображение в карточке */
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Чтобы фото не растягивалось, а красиво заполняло область */
+        }
+
+        /* Контент под фото */
+        .card-content {
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.4em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        h1 {
+            grid-column: 1 / -1; /* Заголовок на всю ширину */
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Бандитские группировки </h1>
+
+        <!-- Карточка 1 -->
+        <div class="card">
+            <img src="Ballas Gang.jpg" alt="Фото 1">
+            <div class="card-content">
+                <h3>Ballas Gang</h3>
+                <p>Ballas Gang — это уличная банда, известная своим фиолетовым цветом и агрессивным поведением. Они действуют в Лос-Сантосе, особенно в районах Grove Street, и ведут вражду с Grove Street Families. Ballas занимаются преступной деятельностью, включая торговлю наркотиками и грабежи, и являются важной частью сюжета игры.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="card">
+            <img src="Los Santos Vagos.jpg" alt="Фото 2">
+            <div class="card-content">
+                <h3>Los Santos Vagos</h3>
+                <p>Los Santos Vagos — это уличная банда, представляющая собой мексиканскую криминальную организацию. Они известны своим желтым цветом и действуют в основном на востоке Лос-Сантоса, включая районы такие как East Los Santos и Rancho. Los Santos Vagos занимаются различными преступлениями, включая наркоторговлю и грабежи, и имеют враждебные отношения с другими бандами, такими как Ballas и Grove Street Families. Банда играет важную роль в игровом мире и сюжетных линиях.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="card">
+            <img src="The Families.jpeg" alt="Фото 3">
+            <div class="card-content">
+                <h3>The Families</h3>
+                <p>The Families — это уличная банда, представляющая собой афроамериканскую организацию, которая исторически была одной из самых влиятельных в Лос-Сантосе. Банда ассоциируется с цветами зеленого и белого и активно действует в районе Grove Street и соседних территориях. 
+
+The Families находятся в постоянной вражде с бандой Ballas, и их основная цель — восстановить утраченные позиции и влияние в городе. Члены The Families занимаются различными преступлениями, включая наркоторговлю, грабежи и уличные бои. В игре они представлены как героические персонажи, стремящиеся защитить свою территорию и сообщество от внешних угроз.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="card">
+            <img src="Marabunta Grande.jpg" alt="Фото 4">
+            <div class="card-content">
+                <h3>Marabunta Grande</h3>
+                <p>Marabunta Grande — это уличная банда, представляющая собой испаноязычную организацию, действующую в Лос-Сантосе. Банда состоит в основном из иммигрантов из Центральной Америки и имеет репутацию жестокой и агрессивной. Их цветами являются красный и черный.
+
+Marabunta Grande активно участвует в различных преступных действиях, включая наркоторговлю, рэкет и уличные бои. Они находятся в конфликте с другими бандами, такими как The Families и Ballas. В игре Marabunta Grande изображается как опасная и непредсказуемая группа, что делает их значимыми игроками на криминальной арене Лос-Сантоса.</p>
+            </div>
+        </div>
+
+        <!-- Карточка 5 -->
+        <div class="card">
+            <img src="BLOODS STREET GANG.jpg" alt="Фото 5">
+            <div class="card-content">
+                <h3>BLOODS STREET GANG</h3>
+                <p>BLOODS STREET GANG — это уличная банда. Они являются частью более широкой уличной культуры и известны своим конфликтом с бандой Crips. Bloods часто ассоциируются с красным цветом, который является их символом, и они имеют репутацию жестокой и агрессивной группы.
+
+В игре Bloods активно участвуют в различных преступных действиях, включая наркоторговлю и уличные бои. Их влияние можно увидеть в различных районах Лос-Сантоса, где они ведут борьбу за территорию и контроль над криминальными операциями. Банда изображается как важный элемент криминального мира игры, с характерными атрибутами и поведением, присущими уличным бандитам.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
